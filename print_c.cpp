@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <stdio.h> //Header File
 
-int main()
+int main() //Function
 {
-    printf("Namaste World!");
+    printf("Namaste World!"); //printf(): To print the elements
     return 0;
 }
