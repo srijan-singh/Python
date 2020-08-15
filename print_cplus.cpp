@@ -1,9 +1,9 @@
-#include <iostream>
+#include <iostream> //Header file
 
-using namespace std;
+using namespace std; //To use Cout command
 
-int main()
+int main() //Fuction
 {
-    cout<<"Namaste World!";
+    cout<<"Namaste World!"; // To print
     return 0;
 }
