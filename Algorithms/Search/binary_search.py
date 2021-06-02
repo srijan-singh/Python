@@ -21,3 +21,4 @@ def binary_search(objects, object, high=0, low=0, mid=0):
             return False
 
 print(binary_search(["Anita",'Bianca','Kristen','Ritika','Rehana',"Selena"],'Ritika'))
+
