@@ -9,8 +9,6 @@ def depth_first_search(graph : dict, source : str) -> None:
             stack.append(neighbour)
 
 
-
-
 graph = {
     'a' : ['b', 'c'],
     'b' : ['d'],
