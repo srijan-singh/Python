@@ -1,46 +1,49 @@
-def left(arr):
-    mid = len(arr)//2
-    return arr[:mid]
+def merge(arr, start, mid, end):
+    temp = []
 
-def right(arr):
-    mid = len(arr)//2
-    return arr[mid:] 
+    left = start; right = mid+1
 
-def merge_sort(arr):
+    while(left<=mid and right <=end):
+        if arr[left] < arr[right]:
+            temp.append(arr[left])
+            left+=1
 
-    if (len(arr) > 1):
-        
-        left_arr = left(arr)
-        right_arr = right(arr)
+        else:
+            temp.append(arr[right])
+            right+=1
 
-        merge_sort(left_arr)
-        merge_sort(right_arr)
+    while(left<=mid):
+        temp.append(arr[left])
+        left+=1
 
-        i=j=k=0
+    while(right<=end):
+        temp.append(arr[right])
+        right+=1
 
-        while i<len(left_arr) and j<len(right_arr):
-            if left_arr[i] < right_arr[j]:
-                arr[k] = left_arr[i]
-                i+=1
-            else:
-                arr[k] = right_arr[j]
-                j+=1
-            k+=1
-
-        while i<len(left_arr) and k<len(arr):
-            arr[k] = left_arr[i]
-            k+=1
-            i+=1
-
-        while j<len(right_arr) and k<len(arr):
-            arr[k] = right_arr[j]
-            k+=1
-            j+=1
-
-    return arr    
+    for i in range(start, end+1):
+        arr[i] = temp[i - start]
 
 
-arr = [13,6,5,2,0,9,1]
+def mergeSort(arr, start, end):
+    if start < end:
+        mid = (start+end)//2
+        mergeSort(arr, start, mid)
+        mergeSort(arr, mid+1, end)
+        merge(arr, start, mid, end)
 
-print(merge_sort(arr))
 
+if __name__ == "__main__":
+    user_input = input("Enter Length of the List: ")
+    length = int(user_input)
+
+    arr = []
+
+    for num in range(length):
+        user_input = input("Enter Element {} : ".format(num+1))
+        arr.append(int(user_input))
+
+    print("Given List: ", arr)
+
+    mergeSort(arr, 0, length-1)
+
+    print("Sorted Array: ",arr)
