@@ -6,5 +6,5 @@ def fib(n, my_dict={}):
     my_dict[n] = fib(n-1, my_dict) + fib(n-2, my_dict)
     return my_dict[n]
 
-print(fib(50))
+print(fib(46))
 
