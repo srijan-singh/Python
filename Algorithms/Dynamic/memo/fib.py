@@ -5,14 +5,16 @@
 # Sum up the sub solution into general solution
 # Optimise the general solution 
 
+"""
 # Unoptimised Solution
 
-def unoptimised_fib(n):
+def fib(n):
     if(n==0):
         return 0
     if (n==1):
         return 1
     return fib(n-1) + fib(n-2)
+    """
 
 # Optimised Solution
 
