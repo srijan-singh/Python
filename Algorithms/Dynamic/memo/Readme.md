@@ -1,5 +1,6 @@
 # Memoization
 
+
 ## Reciepie
 
 ### 1. Make it work.
@@ -13,13 +14,14 @@
 - store return values in memo
 
 
-
 ## Objective
 
 If a problem has been previously solved then we use that solution directly when the same question arrives.
 
+
 ## Data Structure
 We use hashmap as a data structure in memoization to store the question as a key and solution as a pair.
+
 
 ### Inbuilt Data Structures/Libraries for Implementation
 - *unordered_map* in **C++**
@@ -27,12 +29,14 @@ We use hashmap as a data structure in memoization to store the question as a key
 - *dictionary* in **Python**
 - *object* in **Javascript**
 
+
 ## Complexity
 Time Complexity 
 - Best case: O(1)
 - Worst case : O(n)
 
 Space Complexity: O(n)
+
 
 ## Resource:
 
