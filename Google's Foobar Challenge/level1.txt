@@ -2,7 +2,8 @@ Level 1: Prime Numbers
 
 The first goal was to find an identifier for a new employee at the “minions” company.
 
-The identifier is selected base on a random number i. How do we come from the random integer i to the identifier of the new minion employee?
+The identifier is selected base on a random number i. How do we come from the random 
+integer i to the identifier of the new minion employee?
 
 Create a sequence of prime numbers '23571113...'.
 The identifier is the subsequence starting from index i and ending in index i+4 (included).
