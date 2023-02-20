@@ -1,20 +1,64 @@
-def depth_first_search(graph : dict, source : str) -> None:
-    print(source)
-    for neighbour in graph[source]:
-        depth_first_search(graph, neighbour)
+# Depth First Search is a searching algorithm which explores,
+# all nodes unidirectioally until no nodes left
+# It uses stack as a fundamental data structure
 
+# directed graph
+def dfs_ (graph:dict, src) -> None:
 
-graph = {
-    'a' : ['b', 'c'],
-    'b' : ['d'],
-    'c' : ['e'],
-    'd' : ['f'],
-    'e' : [],
-    'f' : []
-}
+    if (src == None):
+        return
 
-source = 'a'
+    print(src)
 
-graph = {0: [1, 2, 3, 4, 5, 6, 7, 8, 9], 1: [3, 5, 7, 9], 2: [3, 4, 5, 6, 7, 8, 9], 3: [5, 7, 9], 4: [5, 6, 7, 8, 9], 5: [7, 9], 6: [7, 8, 9], 7: [9], 8: [9]}
-source = 0
-depth_first_search(graph, source)
+    for neighbour_node in graph[src]:
+        dfs_(graph, neighbour_node)
+
+    return
+
+# for both directed and undirected graph
+def dfs (graph:dict, src, visited:set) -> None:
+    
+    if(src == None):
+        return
+
+    print(src)
+
+    visited.add(src)
+
+    for neighbour_node in graph[src]:
+        
+        if neighbour_node not in visited:
+
+            dfs(graph, neighbour_node, visited) 
+    
+    return
+
+if __name__ == "__main__":
+
+    graph = {
+        'f' : ['g', 'i'],
+        'g' : ['h'],
+        'h' : [],
+        'i' : ['g', 'k'],
+        'j' : ['i'],
+        'k' : []
+    }
+
+    undirected_graph = {
+        'i' : ['j', 'k'],
+        'j' : ['i'],
+        'k' : ['i', 'm', 'l'],
+        'm' : ['k'],
+        'l' : ['k'],
+        'o' : ['n'],
+        'n' : ['o']
+    } 
+
+    src = "f"  
+
+    #dfs_(graph, src)
+
+    src = 'i'
+    visited = set()
+
+    dfs(undirected_graph, src, visited)
